@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  DATABASE: dbteste
+  DATABASE_USER: teste01
+  DATABASE_PASSWORD: tkn@2012
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-06-09T03:52:01Z"
+  name: cm-fb
+  namespace: fb-prd
+  resourceVersion: "6058"
+  uid: f44e63a3-aecb-41a2-9732-91168aa5f549
