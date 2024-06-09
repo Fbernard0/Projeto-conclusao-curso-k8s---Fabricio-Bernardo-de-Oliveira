@@ -1,0 +1,36 @@
+#Deployment fabricio /pod fabricio com 3 replicas
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fabricio
+  namespace: fb-prd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fabricio
+  template:
+    metadata:
+      labels:
+        app: fabricio
+       
+    spec:
+      containers:
+      - name: fabricio
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        envFrom:
+            - secretRef:
+                name: user-pwd
+            - configMapRef:
+                name: cm-fb
+
+
+
+
